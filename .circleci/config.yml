@@ -1,0 +1,39 @@
+version: 2.1
+
+executors:
+  hugo:
+    docker:
+      - image: jojomi/hugo:0.69.0
+  terraform:
+    docker:
+      - image: ussba/terraform:latest
+
+commands:
+  build-app:
+    steps:
+      - run:
+          name: Build application
+          command: hugo
+  upload-to-s3:
+    parameters:
+      bucket:
+        type: string
+    steps:
+      - run:
+          name: Upload application to s3
+          command: |
+            echo "Uploading application to the << parameters.bucket >> bucket"
+            aws s3 sync public/ s3://<< parameters.bucket >>/
+jobs:
+  build:
+    executor: hugo
+    steps:
+      - checkout
+      - build-app
+
+workflows:
+  version: 2
+
+  feature-branch:
+    jobs:
+      - build
