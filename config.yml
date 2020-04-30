@@ -62,4 +62,4 @@ outputFormats:
   svg:
     isPlainText: true
     mediaType: image/svg+xml
-baseURL: http://status.ussba.io
+baseURL: https://status.ussba.io
