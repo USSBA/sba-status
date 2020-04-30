@@ -38,6 +38,9 @@ params:
       closed: false
     - name: Uncategorized
       untitled: true
+    - name: Operating Status
+      description: Agency Operating Status for Offices
+      untited: true
   description: We continuously monitor the status of our services and if there are
     any interruptions, a note will be posted here.
   useLargeHeaderDesign: false
