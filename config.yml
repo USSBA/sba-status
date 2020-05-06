@@ -24,6 +24,9 @@ params:
   logo: /SBA-Logo-Stacked-Reverse.png
   incidentPostsPerPage: 10
   googleAnalytics: UA-00000000-1
+  customTabs:
+    - name: Test
+      link: https://www.google.com
   alwaysKeepBrandColor: true
   disableComplexCalculations: false
   useLogo: true
@@ -40,7 +43,15 @@ params:
       description: Systems supporting www.sbir.gov
     - name: certify.sba.gov
       description: Systems supporting certify.sba.gov
-    - name: Office of Disaster Assistance
+    - name: disasterloan.sba.gov
+      description: Office of Disaster Assistance
+    - name: advocacy.sba.gov
+      description: Office of Advocacy
+    - name: nwbc.gov
+      description: National Women's Business Council
+      closed: false
+    - name: data.sba.gov
+      description: SBA's Open Data Repository
   description: We continuously monitor the status of our services and if there are
     any interruptions, a note will be posted here.
   useLargeHeaderDesign: false
