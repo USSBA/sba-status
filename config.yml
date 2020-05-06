@@ -26,7 +26,7 @@ params:
   googleAnalytics: UA-00000000-1
   customTabs:
     - name: Test
-      link: https://www.google.com
+      link: /pages/example-page/
   alwaysKeepBrandColor: true
   disableComplexCalculations: false
   useLogo: true
