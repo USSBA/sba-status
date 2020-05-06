@@ -32,9 +32,6 @@ params:
   incidentHistoryFormat: yearly
   ok: "#197e4e"
   categories:
-    - name: Applications
-      description: SBA Web Applications
-      closed: false
     - name: Uncategorized
       untitled: true
     - name: SBA.gov
