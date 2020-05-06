@@ -7,18 +7,17 @@ params:
   shortDateFormat: 15:04 — Jan 2
   down: "#cc0000"
   systems:
-    - name: sba.gov
-      category: Applications
+    - name: sba.gov Homepage
+      category: SBA.gov
       description: The sba.gov website
-    - name: certify.sba.gov
-      category: Uncategorized
-    - name: sbir.gov
-      category: Uncategorized
+    - name: HUBZone Map
+      category: certify.sba.gov
+    - name: sbir.gov Homepage
+      category: SBIR.gov
     - name: disasterloan.sba.gov
-      category: Uncategorized
-    - name: SBAHQ
-      category: Uncategorized
-      description: SBA HQ Status
+      category: Office of Disaster Assistance
+    - name: Certify Homepage
+      category: certify.sba.gov
   dateFormat: January 2, 2006 at 3:04 PM
   brand: "#002e6d"
   headerTextColor: white
@@ -33,14 +32,15 @@ params:
   incidentHistoryFormat: yearly
   ok: "#197e4e"
   categories:
-    - name: Applications
-      description: SBA Web Applications
-      closed: false
     - name: Uncategorized
       untitled: true
-    - name: Operating Status
-      description: Agency Operating Status for Offices
-      untited: true
+    - name: SBA.gov
+      description: Applications supporting www.sba.gov
+    - name: SBIR.gov
+      description: Systems supporting www.sbir.gov
+    - name: certify.sba.gov
+      description: Systems supporting certify.sba.gov
+    - name: Office of Disaster Assistance
   description: We continuously monitor the status of our services and if there are
     any interruptions, a note will be posted here.
   useLargeHeaderDesign: false
