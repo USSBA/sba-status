@@ -41,6 +41,8 @@ params:
     - name: Operating Status
       description: Agency Operating Status for Offices
       untited: true
+    - name: SBA.gov
+      description: Applications supporting www.sba.gov
   description: We continuously monitor the status of our services and if there are
     any interruptions, a note will be posted here.
   useLargeHeaderDesign: false
