@@ -32,8 +32,8 @@ params:
   incidentPostsPerPage: 10
   googleAnalytics: UA-00000000-1
   customTabs:
-    - name: Test
-      link: /pages/example-page/
+    - name: Office Operating Status
+      link: /pages/operating-status/
   alwaysKeepBrandColor: true
   disableComplexCalculations: false
   useLogo: true
