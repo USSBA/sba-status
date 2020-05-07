@@ -3,7 +3,7 @@ buildFuture: true
 defaultContentLanguage: en
 languageCode: en
 params:
-  disableDarkMode: true
+  disableDarkMode: false
   shortDateFormat: 15:04 — Jan 2
   down: "#cc0000"
   systems:
@@ -62,7 +62,9 @@ params:
   description: We continuously monitor the status of our services and if there are
     any interruptions, a note will be posted here.
   useLargeHeaderDesign: true
-theme: ["cstate","json-api"]
+theme:
+  - cstate
+  - json-api
 preserveTaxonomyNames: true
 taxonomies:
   affected: affected
