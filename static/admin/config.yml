@@ -241,7 +241,10 @@ collections:
           - label: 'theme'
             name: 'theme'
             widget: 'hidden'
-            default: 'cstate'
+            # SBA Changes: Add json-api
+            default:
+            - 'cstate'
+            - 'json-api'
           - label: 'preserveTaxonomyNames'
             name: 'preserveTaxonomyNames'
             widget: 'hidden'
@@ -270,3 +273,9 @@ collections:
                 widget: "list"
                 allow_add: false
                 default: ['html', 'json', 'rss']
+              # SBA Changes: Add 'issue' block
+              - label: "issue"
+                name: issue
+                widget: "list"
+                allow_add: false
+                default: ['html', 'json']
