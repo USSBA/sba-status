@@ -62,7 +62,7 @@ params:
   description: We continuously monitor the status of our services and if there are
     any interruptions, a note will be posted here.
   useLargeHeaderDesign: true
-theme: cstate
+theme: ["cstate","json-api"]
 preserveTaxonomyNames: true
 taxonomies:
   affected: affected
@@ -79,6 +79,9 @@ outputs:
     - json
     - rss
     - svg
+  issue:
+    - json
+    - html
 outputFormats:
   svg:
     isPlainText: true
