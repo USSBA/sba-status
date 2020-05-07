@@ -28,7 +28,7 @@ params:
   dateFormat: January 2, 2006 at 3:04 PM
   brand: "#002e6d"
   headerTextColor: white
-  logo: /SBA-Logo-Stacked-Reverse.png
+  logo: /SBA-Logo-Horizontal-Reverse.png
   incidentPostsPerPage: 10
   googleAnalytics: UA-00000000-1
   customTabs:
