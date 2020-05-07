@@ -3,7 +3,7 @@ buildFuture: true
 defaultContentLanguage: en
 languageCode: en
 params:
-  disableDarkMode: true
+  disableDarkMode: false
   shortDateFormat: 15:04 — Jan 2
   down: "#cc0000"
   systems:
