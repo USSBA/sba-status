@@ -7,17 +7,24 @@ params:
   shortDateFormat: 15:04 — Jan 2
   down: "#cc0000"
   systems:
-    - name: sba.gov Homepage
+    - name: SBA Homepage
       category: SBA.gov
       description: The sba.gov website
     - name: HUBZone Map
       category: certify.sba.gov
-    - name: sbir.gov Homepage
+    - name: SBIR Homepage
       category: SBIR.gov
-    - name: disasterloan.sba.gov
-      category: Office of Disaster Assistance
+    - name: Disaster Loan Homepage
+      category: disasterloan.sba.gov
     - name: Certify Homepage
       category: certify.sba.gov
+    - category: advocacy.sba.gov
+      name: SBA Advocacy Homepage
+      description: SBA Office of Advocacy
+    - category: nwbc.gov
+      name: National Women's Business Council Homepage
+    - category: data.sba.gov
+      name: SBA Open Data Homepage
   dateFormat: January 2, 2006 at 3:04 PM
   brand: "#002e6d"
   headerTextColor: white
