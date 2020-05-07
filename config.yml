@@ -39,7 +39,7 @@ params:
   useLogo: true
   disrupted: "#f1c400"
   notice: "#002e6d"
-  incidentHistoryFormat: yearly
+  incidentHistoryFormat: monthly
   ok: "#197e4e"
   categories:
     - name: Uncategorized
@@ -61,8 +61,8 @@ params:
       description: SBA's Open Data Repository
   description: We continuously monitor the status of our services and if there are
     any interruptions, a note will be posted here.
-  useLargeHeaderDesign: false
-theme: ["cstate","json-api"]
+  useLargeHeaderDesign: true
+theme: cstate
 preserveTaxonomyNames: true
 taxonomies:
   affected: affected
@@ -79,9 +79,6 @@ outputs:
     - json
     - rss
     - svg
-#  issue:
-#    - json
-#    - html
 outputFormats:
   svg:
     isPlainText: true
