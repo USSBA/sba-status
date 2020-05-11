@@ -1,0 +1,11 @@
+---
+section: issue
+title: SBA.gov Maintenance Window
+date: {{start_date}}
+resolved: {{resolved}}
+informational: false
+resolvedWhen: {{end_date}}
+affected: ['sba.gov Homepage']
+severity: disrupted
+---
+Automatically detected a failed healthcheck
