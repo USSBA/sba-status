@@ -1,11 +1,11 @@
 ---
 section: issue
-title: SBA.gov Maintenance Window
+title: SBA.gov Issue Detected
 date: {{start_date}}
 resolved: {{resolved}}
 informational: false
 resolvedWhen: {{end_date}}
-affected: ['sba.gov Homepage']
+affected: ['SBA Homepage']
 severity: disrupted
 ---
-Automatically detected a failed healthcheck
+An issue was dectected with SBA.gov.  Connectivity may be impacted at this time.  Once the Route53 Healthcheck reports healthy, this issue will automatically resolve.
