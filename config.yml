@@ -63,7 +63,7 @@ params:
     - name: data.sba.gov
       description: SBA's Open Data Repository
     - name: SBA Offices
-      closed: true
+      closed: false
   description: We continuously monitor the status of our services and if there are
     any interruptions, a note will be posted here.
   useLargeHeaderDesign: true
