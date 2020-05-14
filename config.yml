@@ -28,9 +28,6 @@ params:
     - name: SBA HQ
       category: SBA Offices
       description: SBA HQ in Washington DC
-    - name: route53-sbagov
-      category: SBA.gov
-      description: AWS Route53 Automated Alerts for SBA.gov
   dateFormat: January 2, 2006 at 3:04 PM -0700
   brand: "#002e6d"
   headerTextColor: white
