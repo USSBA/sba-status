@@ -113,6 +113,8 @@ collections:
                 - {label: "Name", name: "name", widget: string}
                 - {label: "Category", hint: "All systems need a category. For more, read the migration docs: https://github.com/cstate/cstate/wiki/Usage#v3-to-v4", name: "category", widget: string}
                 - {label: "Description", name: "description", widget: string, required: false}
+                # SBA Changes: Adding URL field for systems
+                - {label: "URL", name: "url", widget: string, required: false, hint: "Optional URL to link to your system"}
                 - {label: "Partial", hint: "Custom HTML feature: https://github.com/cstate/cstate/wiki/Customization#custom-html", name: "partial", widget: string, required: false}
               # Categories
               - label: "Categories"
