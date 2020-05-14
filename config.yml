@@ -10,19 +10,26 @@ params:
     - name: SBA Homepage
       category: SBA.gov
       description: The sba.gov website
+      url: https://www.sba.gov
     - name: HUBZone Map
       category: certify.sba.gov
+      url: https://maps.certify.sba.gov
     - name: SBIR Homepage
       category: SBIR.gov
+      url: https://www.sbir.gov
     - name: Disaster Loan Homepage
       category: disasterloan.sba.gov
+      url: https://disasterloan.sba.gov
     - name: Certify Homepage
       category: certify.sba.gov
+      url: https://certify.sba.gov
     - category: advocacy.sba.gov
       name: SBA Advocacy Homepage
       description: SBA Office of Advocacy
+      url: https://advocacy.sba.gov
     - category: nwbc.gov
       name: National Women's Business Council Homepage
+      url: https://www.nwbc.gov
     - category: data.sba.gov
       name: SBA Open Data Homepage
       url: https://data.sba.gov
