@@ -38,7 +38,7 @@ params:
   headerTextColor: white
   logo: /SBA-Logo-Horizontal-Reverse.png
   incidentPostsPerPage: 10
-  googleAnalytics: UA-00000000-1
+  googleAnalytics: UA-19362636-35
   customTabs:
   alwaysKeepBrandColor: true
   disableComplexCalculations: false
