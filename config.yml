@@ -1,4 +1,4 @@
-title: SBA System Status
+title: USSBA Digital System Status
 buildFuture: true
 defaultContentLanguage: en
 languageCode: en
@@ -10,24 +10,29 @@ params:
     - name: SBA Homepage
       category: SBA.gov
       description: The sba.gov website
+      url: https://www.sba.gov
     - name: HUBZone Map
       category: certify.sba.gov
+      url: https://maps.certify.sba.gov
     - name: SBIR Homepage
       category: SBIR.gov
+      url: https://www.sbir.gov
     - name: Disaster Loan Homepage
       category: disasterloan.sba.gov
+      url: https://disasterloan.sba.gov
     - name: Certify Homepage
       category: certify.sba.gov
+      url: https://certify.sba.gov
     - category: advocacy.sba.gov
       name: SBA Advocacy Homepage
       description: SBA Office of Advocacy
+      url: https://advocacy.sba.gov
     - category: nwbc.gov
       name: National Women's Business Council Homepage
+      url: https://www.nwbc.gov
     - category: data.sba.gov
       name: SBA Open Data Homepage
-    - name: SBA HQ
-      category: SBA Offices
-      description: SBA HQ in Washington DC
+      url: https://data.sba.gov
   dateFormat: January 2, 2006 at 3:04 PM -0700
   brand: "#002e6d"
   headerTextColor: white
@@ -35,8 +40,6 @@ params:
   incidentPostsPerPage: 10
   googleAnalytics: UA-00000000-1
   customTabs:
-    - name: Office Operating Status
-      link: /pages/operating-status/
   alwaysKeepBrandColor: true
   disableComplexCalculations: false
   useLogo: true
@@ -62,10 +65,10 @@ params:
       closed: false
     - name: data.sba.gov
       description: SBA's Open Data Repository
-    - name: SBA Offices
-      closed: false
-  description: We continuously monitor the status of our services and if there are
-    any interruptions, a note will be posted here.
+  description: The United States Small Business Administration uses this status page
+    to alert the public of any issues affecting our digital services.  If you would
+    like to know the Agency Operating Status of physical buildings, please
+    visit [OPM.gov](https://www.opm.gov/) for more details.
   useLargeHeaderDesign: true
 theme:
   - cstate
