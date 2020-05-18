@@ -46,8 +46,7 @@ params:
   disrupted: "#f1c400"
   notice: "#002e6d"
   incidentHistoryFormat: monthly
-  welcomeDescription: This status page updates when there are issues affecting the
-    agency's digital services.
+  welcomeDescription: This page indicates the operating status of the SBA's digital services.
   ok: "#197e4e"
   categories:
     - name: Uncategorized
