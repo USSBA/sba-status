@@ -7,11 +7,11 @@ params:
   shortDateFormat: 15:04 — Jan 2
   down: "#cc0000"
   systems:
-    - name: SBA Homepage
+    - name: Agency Website
       category: SBA.gov
-      description: The sba.gov website
+      description: ""
       url: https://www.sba.gov
-    - name: SBIR Homepage
+    - name: Small Business Innovation Research Website
       category: SBIR.gov
       url: https://www.sbir.gov
     - category: nwbc.gov
