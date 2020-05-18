@@ -10,11 +10,6 @@
   <body class="status-homepage status-{{ if $isDown }}down{{ else }}{{ if $isDisrupted}}disrupted{{ else }}{{ if $isNotice }}notice{{ else }}ok{{ end }}{{ end }}{{ end }} {{ if not .Site.Params.alwaysKeepBrandColor }}change-header-color{{ end }}">
     {{ partial "header" . }}
 
-    <!-- SBA Changes: Move tabs to top -->
-    <!-- Custom tabs -->
-    {{ partial "index/tabs" . }}
-
-
     <!-- Main -->
     <div class="contain">
       <!-- Enable JavaScript banner -->
@@ -37,6 +32,9 @@
       {{ end }}
       <!-- End main -->
     </div>
+
+  <!-- Custom tabs -->
+  {{ partial "index/tabs" . }}
 
   <!-- All incidents + pagination -->
   <div class="contain contain--more" id="incidents">
