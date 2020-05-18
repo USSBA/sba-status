@@ -1,4 +1,4 @@
-title: USSBA System Status
+title: USSBA System Statuss
 buildFuture: true
 defaultContentLanguage: en
 languageCode: en
@@ -40,13 +40,15 @@ params:
   incidentPostsPerPage: 10
   googleAnalytics: UA-19362636-35
   customTabs: null
-  enableCustomHTML: true
   alwaysKeepBrandColor: true
   disableComplexCalculations: false
   useLogo: true
   disrupted: "#f1c400"
   notice: "#002e6d"
   incidentHistoryFormat: monthly
+  welcomeDescription: The United States Small Business Administration uses this
+    status page to alert the public of any issues affecting our digital
+    services.
   ok: "#197e4e"
   categories:
     - name: Uncategorized
@@ -70,9 +72,7 @@ params:
     page to alert the public of any issues affecting our digital services.  If
     you would like to know the Agency Operating Status of physical buildings,
     please visit [OPM.gov](https://www.opm.gov/) for more details.
-  welcomeDescription: The United States Small Business Administration uses this status
-    page to alert the public of any issues affecting our digital services.
-
+  enableCustomHTML: true
   useLargeHeaderDesign: true
 theme:
   - cstate
