@@ -5,7 +5,7 @@ date: {{start_date}}
 resolved: {{resolved}}
 informational: false
 resolvedWhen: {{end_date}}
-affected: ["National Women's Business Council Homepage"]
+affected: ["National Women's Business Council Website"]
 severity: disrupted
 ---
-An issue was dectected with the [National Women's Business Council Homepage](https://www.nwbc.gov).  Connectivity may be impacted at this time.  Once the Route53 Healthcheck reports healthy, this issue will automatically resolve.
+An issue was dectected with the [National Women's Business Council Website](https://www.nwbc.gov).  Connectivity may be impacted at this time.  Once the Route53 Healthcheck reports healthy, this issue will automatically resolve.

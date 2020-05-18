@@ -5,7 +5,7 @@ date: {{start_date}}
 resolved: {{resolved}}
 informational: false
 resolvedWhen: {{end_date}}
-affected: ['advocacy.sba.gov']
+affected: ['Office of Advocacy Website']
 severity: disrupted
 ---
-An issue was dectected with the [Office of Advocacy homepage](https://advocacy.sba.gov).  Connectivity may be impacted at this time.  Once the Route53 Healthcheck reports healthy, this issue will automatically resolve.
+An issue was dectected with the [Office of Advocacy Website](https://advocacy.sba.gov).  Connectivity may be impacted at this time.  Once the Route53 Healthcheck reports healthy, this issue will automatically resolve.

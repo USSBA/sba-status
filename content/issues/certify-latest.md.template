@@ -5,7 +5,7 @@ date: {{start_date}}
 resolved: {{resolved}}
 informational: false
 resolvedWhen: {{end_date}}
-affected: ['Certify Homepage']
+affected: ['Government Contracting Certification System']
 severity: disrupted
 ---
-An issue was dectected with [SBA Certify](https://certify.sba.gov).  Connectivity may be impacted at this time.  Once the Route53 Healthcheck reports healthy, this issue will automatically resolve.
+An issue was dectected with [Government Contracting Certification System](https://certify.sba.gov).  Connectivity may be impacted at this time.  Once the Route53 Healthcheck reports healthy, this issue will automatically resolve.
