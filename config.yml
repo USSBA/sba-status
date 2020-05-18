@@ -46,9 +46,8 @@ params:
   disrupted: "#f1c400"
   notice: "#002e6d"
   incidentHistoryFormat: monthly
-  welcomeDescription: The United States Small Business Administration uses this
-    status page to alert the public of any issues affecting our digital
-    services.
+  welcomeDescription: Status page to alert the public of any issues affecting the
+    agency's digital services.
   ok: "#197e4e"
   categories:
     - name: Uncategorized
@@ -70,8 +69,10 @@ params:
       description: ""
   description: The United States Small Business Administration uses this status
     page to alert the public of any issues affecting our digital services.  If
-    you would like to know the Agency Operating Status of physical buildings,
-    please visit [OPM.gov](https://www.opm.gov/) for more details.
+    you would like to know the operating status of the agency's physical
+    buildings, please visit
+    [OPM.gov](https://www.opm.gov/policy-data-oversight/snow-dismissal-procedures/current-status/)
+    for more details.
   enableCustomHTML: true
   useLargeHeaderDesign: true
 theme:
