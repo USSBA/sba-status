@@ -7,7 +7,7 @@ params:
   shortDateFormat: 15:04 — Jan 2
   down: "#cc0000"
   systems:
-    - name: Agency Website
+    - name: Small Business Administration Website
       category: SBA.gov
       description: ""
       url: https://www.sba.gov
@@ -15,23 +15,23 @@ params:
       category: SBIR.gov
       url: https://www.sbir.gov
     - category: nwbc.gov
-      name: National Women's Business Council Homepage
+      name: National Women's Business Council Website
       url: https://www.nwbc.gov
-    - name: Certify Homepage
+    - name: Government Contracting Certification System
       category: certify.sba.gov
       url: https://certify.sba.gov
-    - name: HUBZone Map
+    - name: Historically Underutilized Business Zone Map
       category: certify.sba.gov
       url: https://maps.certify.sba.gov
-    - name: Disaster Loan Homepage
+    - name: Disaster Loan Access System
       category: disasterloan.sba.gov
       url: https://disasterloan.sba.gov
     - category: advocacy.sba.gov
-      name: SBA Advocacy Homepage
-      description: SBA Office of Advocacy
+      name: Office of Advocacy Website
+      description: ""
       url: https://advocacy.sba.gov
     - category: data.sba.gov
-      name: SBA Open Data Homepage
+      name: Open Data System
       url: https://data.sba.gov
   dateFormat: January 2, 2006 at 3:04 PM -0700
   brand: "#002e6d"
@@ -40,7 +40,6 @@ params:
   incidentPostsPerPage: 10
   googleAnalytics: UA-19362636-35
   customTabs: null
-  enableCustomHTML: true
   alwaysKeepBrandColor: true
   disableComplexCalculations: false
   useLogo: true
@@ -70,8 +69,6 @@ params:
     page to alert the public of any issues affecting our digital services.  If
     you would like to know the Agency Operating Status of physical buildings,
     please visit [OPM.gov](https://www.opm.gov/) for more details.
-  welcomeDescription: The United States Small Business Administration uses this status
-    page to alert the public of any issues affecting our digital services.
   useLargeHeaderDesign: true
 theme:
   - cstate
