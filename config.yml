@@ -56,16 +56,16 @@ params:
       description: ""
     - name: SBIR.gov
       description: ""
-    - name: Certify.SBA.gov
-      description: ""
-    - name: DisasterLoan.SBA.gov
-      description: ""
-    - name: Advocacy.SBA.gov
-      description: ""
     - name: NWBC.gov
       description: ""
       closed: false
+    - name: Advocacy.SBA.gov
+      description: ""
+    - name: Certify.SBA.gov
+      description: ""
     - name: Data.SBA.gov
+      description: ""
+    - name: DisasterLoan.SBA.gov
       description: ""
   description: The United States Small Business Administration uses this status
     page to alert the public of any issues affecting our digital services.  If
