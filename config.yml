@@ -1,4 +1,4 @@
-title: USSBA Digital System Status
+title: USSBA System Status
 buildFuture: true
 defaultContentLanguage: en
 languageCode: en
@@ -39,7 +39,7 @@ params:
   logo: /SBA-Logo-Horizontal-Reverse.png
   incidentPostsPerPage: 10
   googleAnalytics: UA-19362636-35
-  customTabs:
+  customTabs: null
   alwaysKeepBrandColor: true
   disableComplexCalculations: false
   useLogo: true
@@ -65,10 +65,10 @@ params:
       closed: false
     - name: data.sba.gov
       description: SBA's Open Data Repository
-  description: The United States Small Business Administration uses this status page
-    to alert the public of any issues affecting our digital services.  If you would
-    like to know the Agency Operating Status of physical buildings, please
-    visit [OPM.gov](https://www.opm.gov/) for more details.
+  description: The United States Small Business Administration uses this status
+    page to alert the public of any issues affecting our digital services.  If
+    you would like to know the Agency Operating Status of physical buildings,
+    please visit [OPM.gov](https://www.opm.gov/) for more details.
   useLargeHeaderDesign: true
 theme:
   - cstate
