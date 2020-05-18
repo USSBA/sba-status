@@ -40,39 +40,39 @@ params:
   incidentPostsPerPage: 10
   googleAnalytics: UA-19362636-35
   customTabs: null
-  enableCustomHTML: true
   alwaysKeepBrandColor: true
   disableComplexCalculations: false
   useLogo: true
   disrupted: "#f1c400"
   notice: "#002e6d"
   incidentHistoryFormat: monthly
+  welcomeDescription: The United States Small Business Administration uses this
+    status page to alert the public of any issues affecting our digital
+    services.
   ok: "#197e4e"
   categories:
     - name: Uncategorized
       untitled: true
     - name: SBA.gov
-      description: Applications supporting www.sba.gov
+      description: ""
     - name: SBIR.gov
-      description: Systems supporting www.sbir.gov
+      description: ""
     - name: certify.sba.gov
-      description: Systems supporting certify.sba.gov
+      description: ""
     - name: disasterloan.sba.gov
-      description: Office of Disaster Assistance
+      description: ""
     - name: advocacy.sba.gov
-      description: Office of Advocacy
+      description: ""
     - name: nwbc.gov
-      description: National Women's Business Council
+      description: ""
       closed: false
     - name: data.sba.gov
-      description: SBA's Open Data Repository
+      description: ""
   description: The United States Small Business Administration uses this status
     page to alert the public of any issues affecting our digital services.  If
     you would like to know the Agency Operating Status of physical buildings,
     please visit [OPM.gov](https://www.opm.gov/) for more details.
-  welcomeDescription: The United States Small Business Administration uses this status
-    page to alert the public of any issues affecting our digital services.
-
+  enableCustomHTML: true
   useLargeHeaderDesign: true
 theme:
   - cstate
