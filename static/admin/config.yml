@@ -262,6 +262,10 @@ collections:
             widget: "hidden"
             fields:
               - {label: "affected", name: "affected", widget: "hidden", default: "affected"}
+          - label: 'enableCustomHTML'
+            name: 'enableCustomHTML'
+            widget: 'hidden'
+            default: 'false'
           - label: "outputs (Do not touch!)"
             name: outputs
             widget: "hidden"
