@@ -262,6 +262,7 @@ collections:
             widget: "hidden"
             fields:
               - {label: "affected", name: "affected", widget: "hidden", default: "affected"}
+          # SBA Changes: Adding a hidden enableCustomHTML field so our config.yml changes don't get wiped
           - label: 'enableCustomHTML'
             name: 'enableCustomHTML'
             widget: 'hidden'
