@@ -18,19 +18,19 @@ params:
       name: National Women's Business Council Website
       url: https://www.nwbc.gov
     - name: Government Contracting Certification System
-      category: certify.sba.gov
+      category: Certify.SBA.gov
       url: https://certify.sba.gov
     - name: Historically Underutilized Business Zone Map
-      category: certify.sba.gov
+      category: Certify.SBA.gov
       url: https://maps.certify.sba.gov
     - name: Disaster Loan Access System
-      category: disasterloan.sba.gov
+      category: DisasterLoan.SBA.gov
       url: https://disasterloan.sba.gov
-    - category: advocacy.sba.gov
+    - category: Advocacy.SBA.gov
       name: Office of Advocacy Website
       description: ""
       url: https://advocacy.sba.gov
-    - category: data.sba.gov
+    - category: Data.SBA.gov
       name: Open Data System
       url: https://data.sba.gov
   dateFormat: January 2, 2006 at 3:04 PM -0700
@@ -57,16 +57,16 @@ params:
       description: ""
     - name: SBIR.gov
       description: ""
-    - name: certify.sba.gov
+    - name: Certify.SBA.gov
       description: ""
-    - name: disasterloan.sba.gov
+    - name: DisasterLoan.SBA.gov
       description: ""
-    - name: advocacy.sba.gov
+    - name: Advocacy.SBA.gov
       description: ""
-    - name: nwbc.gov
+    - name: NWBC.gov
       description: ""
       closed: false
-    - name: data.sba.gov
+    - name: Data.SBA.gov
       description: ""
   description: The United States Small Business Administration uses this status
     page to alert the public of any issues affecting our digital services.  If
