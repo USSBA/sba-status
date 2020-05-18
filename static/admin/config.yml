@@ -183,6 +183,12 @@ collections:
                 name: 'description'
                 widget: 'text'
                 default: 'We continuously monitor the status of our services and if there are any interruptions, a note will be posted here.'
+              # SBA Changes: Welcome Description
+              - label: 'Welcome description'
+                hint: 'This is the description that is shown after the header.'
+                name: 'welcomeDescription'
+                widget: 'text'
+                default: 'We continuously monitor the status of our services and if there are any interruptions, a note will be posted here.'
               # Incidents per page
               - label: 'Incident posts shown in one page'
                 name: 'incidentPostsPerPage'
