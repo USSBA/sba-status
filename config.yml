@@ -46,7 +46,7 @@ params:
   disrupted: "#f1c400"
   notice: "#002e6d"
   incidentHistoryFormat: monthly
-  welcomeDescription: Status page to alert the public of any issues affecting the
+  welcomeDescription: This page updates when there are any issues affecting the
     agency's digital services.
   ok: "#197e4e"
   categories:
