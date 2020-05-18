@@ -46,7 +46,7 @@ params:
   disrupted: "#f1c400"
   notice: "#002e6d"
   incidentHistoryFormat: monthly
-  welcomeDescription: This page updates when there are any issues affecting the
+  welcomeDescription: This status page updates when there are issues affecting the
     agency's digital services.
   ok: "#197e4e"
   categories:
@@ -71,8 +71,7 @@ params:
     page to alert the public of any issues affecting our digital services.  If
     you would like to know the operating status of the agency's physical
     buildings, please visit
-    [OPM.gov](https://www.opm.gov/policy-data-oversight/snow-dismissal-procedures/current-status/)
-    for more details.
+    [OPM.gov](https://www.opm.gov/policy-data-oversight/snow-dismissal-procedures/current-status/).
   enableCustomHTML: true
   useLargeHeaderDesign: true
 theme:
