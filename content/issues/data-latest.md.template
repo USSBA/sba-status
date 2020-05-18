@@ -5,7 +5,7 @@ date: {{start_date}}
 resolved: {{resolved}}
 informational: false
 resolvedWhen: {{end_date}}
-affected: ['SBA Open Data Homepage']
+affected: ['Open Data System']
 severity: disrupted
 ---
-An issue was dectected with [data.SBA.gov](https://data.sba.gov).  Connectivity may be impacted at this time.  Once the Route53 Healthcheck reports healthy, this issue will automatically resolve.
+An issue was dectected with [Open Data System](https://data.sba.gov).  Connectivity may be impacted at this time.  Once the Route53 Healthcheck reports healthy, this issue will automatically resolve.

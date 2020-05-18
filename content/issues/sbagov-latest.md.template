@@ -5,7 +5,7 @@ date: {{start_date}}
 resolved: {{resolved}}
 informational: false
 resolvedWhen: {{end_date}}
-affected: ['SBA Homepage']
+affected: ['Small Business Administration Website']
 severity: disrupted
 ---
-An issue was dectected with SBA.gov.  Connectivity may be impacted at this time.  Once the Route53 Healthcheck reports healthy, this issue will automatically resolve.
+An issue was dectected with [Small Business Administration Website](https://www.sba.gov).  Connectivity may be impacted at this time.  Once the Route53 Healthcheck reports healthy, this issue will automatically resolve.

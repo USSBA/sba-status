@@ -5,7 +5,7 @@ date: {{start_date}}
 resolved: {{resolved}}
 informational: false
 resolvedWhen: {{end_date}}
-affected: ['HUBZone Map']
+affected: ['Historically Underutilized Business Zone Map']
 severity: disrupted
 ---
-An issue was dectected with [SBA HUBZone Map](https://maps.certify.sba.gov).  Connectivity may be impacted at this time.  Once the Route53 Healthcheck reports healthy, this issue will automatically resolve.
+An issue was dectected with [Historically Underutilized Business Zone Map](https://maps.certify.sba.gov).  Connectivity may be impacted at this time.  Once the Route53 Healthcheck reports healthy, this issue will automatically resolve.
