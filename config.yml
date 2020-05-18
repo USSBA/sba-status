@@ -17,22 +17,22 @@ params:
     - category: NWBC.gov
       name: National Women's Business Council Website
       url: https://www.nwbc.gov
+    - category: Advocacy.SBA.gov
+      name: Office of Advocacy Website
+      description: ""
+      url: https://advocacy.sba.gov
     - name: Government Contracting Certification System
       category: Certify.SBA.gov
       url: https://certify.sba.gov
     - name: Historically Underutilized Business Zone Map
       category: Certify.SBA.gov
       url: https://maps.certify.sba.gov
-    - name: Disaster Loan Access System
-      category: DisasterLoan.SBA.gov
-      url: https://disasterloan.sba.gov
-    - category: Advocacy.SBA.gov
-      name: Office of Advocacy Website
-      description: ""
-      url: https://advocacy.sba.gov
     - category: Data.SBA.gov
       name: Open Data System
       url: https://data.sba.gov
+    - name: Disaster Loan Access System
+      category: DisasterLoan.SBA.gov
+      url: https://disasterloan.sba.gov
   dateFormat: January 2, 2006 at 3:04 PM -0700
   brand: "#002e6d"
   headerTextColor: white
