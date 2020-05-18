@@ -40,6 +40,7 @@ params:
   incidentPostsPerPage: 10
   googleAnalytics: UA-19362636-35
   customTabs: null
+  enableCustomHTML: true
   alwaysKeepBrandColor: true
   disableComplexCalculations: false
   useLogo: true
@@ -69,6 +70,9 @@ params:
     page to alert the public of any issues affecting our digital services.  If
     you would like to know the Agency Operating Status of physical buildings,
     please visit [OPM.gov](https://www.opm.gov/) for more details.
+  welcomeDescription: The United States Small Business Administration uses this status
+    page to alert the public of any issues affecting our digital services.
+
   useLargeHeaderDesign: true
 theme:
   - cstate
