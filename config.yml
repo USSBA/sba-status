@@ -14,7 +14,7 @@ params:
     - name: Small Business Innovation Research Website
       category: SBIR.gov
       url: https://www.sbir.gov
-    - category: nwbc.gov
+    - category: NWBC.gov
       name: National Women's Business Council Website
       url: https://www.nwbc.gov
     - name: Government Contracting Certification System
