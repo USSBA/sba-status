@@ -1,7 +1,8 @@
 ---
 title: Operating Status
-description: Office status the Small Business Administration.  Reports office
-  closures due to inclement weather, hazards, shutdown, etc.
+description: System status of the United States Small Business
+  Administration.  Reports system issues due to maintenance, operational
+  concerns, or unscheduled downtime.
 ---
 ## SBA Headquarters
 
