@@ -39,7 +39,9 @@ params:
   logo: /SBA-Logo-Horizontal-Reverse.png
   incidentPostsPerPage: 10
   googleAnalytics: UA-19362636-35
-  customTabs: null
+  customTabs:
+  - name: Lighthouse Accessibility Reports
+    link: pages/lighthouse/
   alwaysKeepBrandColor: true
   disableComplexCalculations: false
   useLogo: true
