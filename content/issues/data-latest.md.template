@@ -1,6 +1,6 @@
 ---
 section: issue
-title: data.SBA.gov Issue Detected
+title: Open Data System Issue Detected
 date: {{start_date}}
 resolved: {{resolved}}
 informational: false
