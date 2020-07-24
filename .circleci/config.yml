@@ -1,39 +1,41 @@
 version: 2.1
 
-executors:
-  hugo:
-    docker:
-      - image: jojomi/hugo:0.69.0
-  terraform:
-    docker:
-      - image: ussba/terraform:latest
+orbs:
+  hugo: circleci/hugo@0.2
+  aws-s3: circleci/aws-s3@1.0.16
 
-commands:
-  build-app:
-    steps:
-      - run:
-          name: Build application
-          command: hugo
-  upload-to-s3:
-    parameters:
-      bucket:
-        type: string
-    steps:
-      - run:
-          name: Upload application to s3
-          command: |
-            echo "Uploading application to the << parameters.bucket >> bucket"
-            aws s3 sync public/ s3://<< parameters.bucket >>/
 jobs:
-  build:
-    executor: hugo
+  deploy-site:
+    docker:
+    - image: 'cimg/python:3.6'
+      environment:
+        AWS_REGION: us-east-1
     steps:
-      - checkout
-      - build-app
-
+      - attach_workspace:
+          at: ~/
+      - aws-s3/sync:
+          arguments: '--delete'
+          from: ~/public/
+          to: 's3://status.sba.gov/'
 workflows:
   version: 2
 
-  feature-branch:
+  build-deploy:
     jobs:
-      - build
+    - hugo/build:
+        html-proofer: false
+        version: '0.73'
+        filters:
+          branches:
+            only: [master]
+          tags:
+            only: [deploy]
+    - deploy-site:
+        context: sba-gov-upper
+        requires:
+          - hugo/build
+        filters:
+          branches:
+            only: [master]
+          tags:
+            only: [deploy]
