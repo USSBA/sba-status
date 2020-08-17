@@ -1,39 +1,173 @@
 version: 2.1
 
+orbs:
+  hugo: circleci/hugo@0.2
+  aws-s3: circleci/aws-s3@1.0.16
+
 executors:
-  hugo:
+  lighthouse:
     docker:
-      - image: jojomi/hugo:0.69.0
-  terraform:
+      - image: circleci/node:lts-browsers
+    working_directory: /tmp
+  python:
     docker:
-      - image: ussba/terraform:latest
+    - image: 'cimg/python:3.6'
+      environment:
+        AWS_REGION: us-east-1
 
 commands:
-  build-app:
-    steps:
-      - run:
-          name: Build application
-          command: hugo
-  upload-to-s3:
+  test-with-lighthouse:
     parameters:
-      bucket:
+      website_url:
+        type: string
+      filename_prefix:
         type: string
     steps:
       - run:
-          name: Upload application to s3
+          sudo npm install -g lighthouse && mkdir -p /tmp/artifacts
+      - run:
+          lighthouse --chrome-flags="--headless" --output html,json --output-path=/tmp/artifacts/<< parameters.filename_prefix >>.html << parameters.website_url >>
+      - run:
+          name: fetch-badge
           command: |
-            echo "Uploading application to the << parameters.bucket >> bucket"
-            aws s3 sync public/ s3://<< parameters.bucket >>/
-jobs:
-  build:
-    executor: hugo
-    steps:
-      - checkout
-      - build-app
+            sudo apt-get install jq -y
+            filename_prefix=<< parameters.filename_prefix >>
+            function fetch_badge() {
+              green='0CCE6B'
+              orange='FFA400'
+              red='FF4E42'
+              field=$1
+              value=$(cat /tmp/artifacts/$filename_prefix.report.json | jq -r ".categories.\"$field\".score")
+              if (( $(echo "$value 0.9" | awk '{print ($1 >= $2)}') )); then
+                color=$green
+              elif (( $(echo "$value 0.5" | awk '{print ($1 >= $2)}') )); then
+                color=$orange
+              else
+                color=$red
+              fi
+              wget -q -O /tmp/artifacts/$filename_prefix.badge.$field.svg "https://img.shields.io/static/v1?label=$field&message=$value&color=$color&logoWidth=40"
+            }
+            fetch_badge "performance"
+            fetch_badge "accessibility"
+            fetch_badge "best-practices"
+            fetch_badge "seo"
+      - persist_to_workspace:
+          root: /tmp/artifacts
+          paths:
+            - << parameters.filename_prefix >>.report.html
+            - << parameters.filename_prefix >>.report.json
+            - << parameters.filename_prefix >>.*.svg
 
+jobs:
+  deploy-site:
+    executor: python
+    steps:
+      - attach_workspace:
+          at: ~/
+      - aws-s3/sync:
+          arguments: "--delete --exclude 'lighthouse/*'"
+          from: ~/public/
+          to: 's3://status.sba.gov-static-content/'
+
+  deploy-lighthouse:
+    executor: python
+    steps:
+      - attach_workspace:
+          at: /tmp/artifacts
+      - aws-s3/sync:
+          from: /tmp/artifacts/
+          to: 's3://status.sba.gov-static-content/lighthouse/'
+
+  lighthouse:
+    executor: lighthouse
+    parameters:
+      website_url:
+        type: string
+      filename_prefix:
+        type: string
+    steps:
+      - test-with-lighthouse:
+          website_url:     << parameters.website_url >>
+          filename_prefix: << parameters.filename_prefix >>
 workflows:
   version: 2
 
-  feature-branch:
+  build-deploy:
     jobs:
-      - build
+    - hugo/build:
+        html-proofer: false
+        version: '0.73'
+        filters:
+          branches:
+            only: [master]
+          tags:
+            only: [deploy]
+    - deploy-site:
+        context: sba-status
+        requires:
+          - hugo/build
+        filters:
+          branches:
+            only: [master]
+          tags:
+            only: [deploy]
+  lighthouse:
+    triggers:
+      - schedule:
+          cron: "0 4 * * *"  # Daily
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      # test sbagov
+      - lighthouse:
+          name: lighthouse-sbagov
+          website_url: https://www.sba.gov
+          filename_prefix: sbagov
+      # test sbir
+      - lighthouse:
+          name: lighthouse-sbir
+          website_url: https://www.sbir.gov
+          filename_prefix: sbir
+      # test nwbc
+      - lighthouse:
+          name: lighthouse-nwbc
+          website_url: https://www.nwbc.gov
+          filename_prefix: nwbc
+      # test advocacy
+      - lighthouse:
+          name: lighthouse-advocacy
+          website_url: https://advocacy.sba.gov
+          filename_prefix: advocacy
+      # test certify
+      - lighthouse:
+          name: lighthouse-certify
+          website_url: https://certify.sba.gov
+          filename_prefix: certify
+      # test hubzone
+      - lighthouse:
+          name: lighthouse-certify-hubzone
+          website_url: https://maps.certify.sba.gov/hubzone/map
+          filename_prefix: certify-hubzone
+      # test data
+      - lighthouse:
+          name: lighthouse-data
+          website_url: https://data.sba.gov
+          filename_prefix: data
+      # test disasterloan
+      - lighthouse:
+          name: lighthouse-disasterloan
+          website_url: https://disasterloan.sba.gov/ela/
+          filename_prefix: disasterloan
+      - deploy-lighthouse:
+          name: deploy-lighthouse
+          requires:
+            - lighthouse-sbir
+            - lighthouse-sbagov
+            - lighthouse-certify
+            - lighthouse-certify-hubzone
+            - lighthouse-data
+            - lighthouse-disasterloan
+            - lighthouse-nwbc
+            - lighthouse-advocacy
