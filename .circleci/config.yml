@@ -115,7 +115,7 @@ workflows:
   scheduled-build-deploy:
     triggers:
       - schedule:
-          cron: "30 18 * * *" # "0 0,4,8,12,16,20 * * *"  # Daily every 4 hours
+          cron: "40 18 * * *" # "0 0,4,8,12,16,20 * * *"  # Daily every 4 hours
           filters:
             branches:
               only:
@@ -127,14 +127,14 @@ workflows:
           version: '0.73'
           filters:
             branches:
-              only: [master]
+              only: [master, IA-1775-schedule-build]
       - deploy-site:
           context: sba-status
           requires:
             - hugo/build
           filters:
             branches:
-              only: [master]
+              only: [master, IA-1775-schedule-build]
   lighthouse:
     triggers:
       - schedule:
