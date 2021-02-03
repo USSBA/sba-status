@@ -111,14 +111,16 @@ workflows:
             only: [master]
           tags:
             only: [deploy]
+  # Run a build and deloy on a schedule
   scheduled-build-deploy:
     triggers:
       - schedule:
-          cron: "0 0,4,8,12,16,20 * * *"  # Daily every 4 hours
+          cron: "30 18 * * *" # "0 0,4,8,12,16,20 * * *"  # Daily every 4 hours
           filters:
             branches:
               only:
                 - master
+                - IA-1775-schedule-build
     jobs:
       - hugo/build:
           html-proofer: false
