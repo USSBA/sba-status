@@ -111,6 +111,28 @@ workflows:
             only: [master]
           tags:
             only: [deploy]
+  scheduled-build-deploy:
+    triggers:
+      - schedule:
+          cron: "0 0,4,8,12,16,20 * * *"  # Daily every 4 hours
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - hugo/build:
+          html-proofer: false
+          version: '0.73'
+          filters:
+            branches:
+              only: [master]
+      - deploy-site:
+          context: sba-status
+          requires:
+            - hugo/build
+          filters:
+            branches:
+              only: [master]
   lighthouse:
     triggers:
       - schedule:
