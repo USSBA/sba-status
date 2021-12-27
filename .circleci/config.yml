@@ -155,11 +155,6 @@ workflows:
           name: lighthouse-data
           website_url: https://data.sba.gov
           filename_prefix: data
-      # test disasterloan
-      - lighthouse:
-          name: lighthouse-disasterloan
-          website_url: https://disasterloan.sba.gov/ela/
-          filename_prefix: disasterloan
       - deploy-lighthouse:
           name: deploy-lighthouse
           requires:
@@ -168,6 +163,5 @@ workflows:
             - lighthouse-certify
             - lighthouse-certify-hubzone
             - lighthouse-data
-            - lighthouse-disasterloan
             - lighthouse-nwbc
             - lighthouse-advocacy
