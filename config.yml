@@ -30,9 +30,6 @@ params:
     - category: Data.SBA.gov
       name: Open Data System
       url: https://data.sba.gov
-    - name: Disaster Loan Access System
-      category: DisasterLoan.SBA.gov
-      url: https://disasterloan.sba.gov
   dateFormat: January 2, 2006 at 3:04 PM -0700
   brand: "#002e6d"
   headerTextColor: white
@@ -66,8 +63,6 @@ params:
     - name: Certify.SBA.gov
       description: ""
     - name: Data.SBA.gov
-      description: ""
-    - name: DisasterLoan.SBA.gov
       description: ""
   description: The United States Small Business Administration uses this status
     page to alert the public of any issues affecting our digital services.  If
