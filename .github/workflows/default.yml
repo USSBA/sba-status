@@ -1,0 +1,55 @@
+# global configuration for all jobs
+name: Dev Deployment
+on:
+  push:
+    branches:
+      - master
+      - IA-2612
+
+# sets the default shell for all job
+defaults:
+  run:
+    shell: bash
+
+# permissions can be set globally for jobs
+permissions:
+  contents: read # contents is used for checking out code
+  id-token: write
+
+jobs:
+  build-site:
+    runs-on: python
+    steps:
+      - uses: actions/checkout@v3
+      - name: Configure AWS
+        uses: ./.github/actions/aws-auth
+        with: # with key is how you can reference input variables within an action
+          oidc_role_arn: ${{ secrets.OIDC_ARN }}
+
+  deploy-site:
+    runs-on: python
+    steps:
+      - uses: actions/checkout@v3
+      - name: Configure AWS
+        uses: ./.github/actions/aws-auth
+        with: # with key is how you can reference input variables within an action
+          oidc_role_arn: ${{ secrets.OIDC_ARN }}
+
+  build-lighthouse:
+    runs-on: python
+    steps:
+      - uses: actions/checkout@v3
+      - name: Configure AWS
+        uses: ./.github/actions/aws-auth
+        with: # with key is how you can reference input variables within an action
+          oidc_role_arn: ${{ secrets.OIDC_ARN }}
+
+  deploy-lighthouse:
+    runs-on: python
+    steps:
+      - uses: actions/checkout@v3
+      - name: Configure AWS
+        uses: ./.github/actions/aws-auth
+        with: # with key is how you can reference input variables within an action
+          oidc_role_arn: ${{ secrets.OIDC_ARN }}
+
