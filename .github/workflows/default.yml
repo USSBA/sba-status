@@ -41,6 +41,7 @@ jobs:
         with:
           name: public.tar
           path: public.tar
+          retention-days: 1
 
   deploy-site:
     needs: build-site
