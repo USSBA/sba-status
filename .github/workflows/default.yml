@@ -18,38 +18,55 @@ permissions:
 
 jobs:
   build-site:
-    runs-on: python
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          submodules: true
       - name: Configure AWS
         uses: ./.github/actions/aws-auth
-        with: # with key is how you can reference input variables within an action
+        with:
           oidc_role_arn: ${{ secrets.OIDC_ARN }}
+      - name: Hugo Setup
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+      - name: Hugo Build
+        run: |
+          hugo
+      - name: Prepare Artifact
+        run: |
+          tar -cvf public.tar public/
+          ls -al
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: public.tar
+          path: public.tar
 
   deploy-site:
-    runs-on: python
+    needs: build-site
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Configure AWS
         uses: ./.github/actions/aws-auth
-        with: # with key is how you can reference input variables within an action
+        with:
           oidc_role_arn: ${{ secrets.OIDC_ARN }}
-
-  build-lighthouse:
-    runs-on: python
-    steps:
-      - uses: actions/checkout@v3
-      - name: Configure AWS
-        uses: ./.github/actions/aws-auth
-        with: # with key is how you can reference input variables within an action
-          oidc_role_arn: ${{ secrets.OIDC_ARN }}
-
-  deploy-lighthouse:
-    runs-on: python
-    steps:
-      - uses: actions/checkout@v3
-      - name: Configure AWS
-        uses: ./.github/actions/aws-auth
-        with: # with key is how you can reference input variables within an action
-          oidc_role_arn: ${{ secrets.OIDC_ARN }}
-
+      - name: Download Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: public.tar
+      - name: Extract Artifact
+        run: |
+          tar -xvf public.tar
+      - name: Publish to S3
+        run: |
+          dir="public/"
+          if [[ ! -d "${dir}" ]]; then
+            echo "FAILURE: ${dir} does not exist."
+            exit 1
+          else
+            echo "SUCCESS: ${dir} exists. Copying site S3."
+            aws s3 cp public/ s3://status.sba.gov-static-content/ --recursive --dryrun
+          fi
