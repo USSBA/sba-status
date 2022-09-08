@@ -1,10 +1,9 @@
 # global configuration for all jobs
-name: Dev Deployment
+name: SBA Status Deployment
 on:
   push:
     branches:
       - master
-      - IA-2612
 
 # sets the default shell for all job
 defaults:
@@ -13,7 +12,7 @@ defaults:
 
 # permissions can be set globally for jobs
 permissions:
-  contents: read # contents is used for checking out code
+  contents: read
   id-token: write
 
 jobs:
@@ -37,7 +36,6 @@ jobs:
       - name: Prepare Artifact
         run: |
           tar -cvf public.tar public/
-          ls -al
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
@@ -68,5 +66,5 @@ jobs:
             exit 1
           else
             echo "SUCCESS: ${dir} exists. Copying site S3."
-            aws s3 cp public/ s3://status.sba.gov-static-content/ --recursive --dryrun
+            aws s3 cp public/ s3://status.sba.gov-static-content/ --recursive
           fi
