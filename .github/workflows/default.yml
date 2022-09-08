@@ -1,0 +1,71 @@
+# global configuration for all jobs
+name: SBA Status Deployment
+on:
+  push:
+    branches:
+      - master
+
+# sets the default shell for all job
+defaults:
+  run:
+    shell: bash
+
+# permissions can be set globally for jobs
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  build-site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+      - name: Configure AWS
+        uses: ./.github/actions/aws-auth
+        with:
+          oidc_role_arn: ${{ secrets.OIDC_ARN }}
+      - name: Hugo Setup
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+      - name: Hugo Build
+        run: |
+          hugo
+      - name: Prepare Artifact
+        run: |
+          tar -cvf public.tar public/
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: public.tar
+          path: public.tar
+          retention-days: 1
+
+  deploy-site:
+    needs: build-site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Configure AWS
+        uses: ./.github/actions/aws-auth
+        with:
+          oidc_role_arn: ${{ secrets.OIDC_ARN }}
+      - name: Download Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: public.tar
+      - name: Extract Artifact
+        run: |
+          tar -xvf public.tar
+      - name: Publish to S3
+        run: |
+          dir="public/"
+          if [[ ! -d "${dir}" ]]; then
+            echo "FAILURE: ${dir} does not exist."
+            exit 1
+          else
+            echo "SUCCESS: ${dir} exists. Copying site S3."
+            aws s3 cp public/ s3://status.sba.gov-static-content/ --recursive
+          fi
